@@ -1,0 +1,43 @@
+.instructions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .heading1 {
+      font: 600 32px popins;
+    }
+
+    .heading2 {
+      font: 300 24px popins;
+    }
+  }
+  .mainContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    .checkLabel{
+        cursor: pointer;
+    }
+    .check {
+      height: 20px;
+      width: 20px;
+      accent-color: #007bff;
+      cursor: pointer;
+    }
+    
+  }
+
+  font: 200 24px popins;
+  line-height: 2;
+}

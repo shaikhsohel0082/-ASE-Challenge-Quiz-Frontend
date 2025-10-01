@@ -1,0 +1,29 @@
+.scoreWrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    height: 100px;
+
+    .score {
+        display: flex;
+        width: 90%;
+        justify-content: space-between;
+
+        .heading1 {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            font: 700 42px popins;
+        }
+
+    }
+
+    .exit {
+        display: flex;
+        justify-content: end;
+        width: 20%;
+    }
+
+}

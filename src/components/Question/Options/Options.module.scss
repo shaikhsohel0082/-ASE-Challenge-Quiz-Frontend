@@ -1,0 +1,32 @@
+.option{
+    display: flex;
+    align-items: center;
+    padding:20px;
+    width: 50vw;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    position: relative;
+
+}
+.optContainer>image,.optContainer>label{
+    cursor: pointer; 
+}
+.radio{
+    height: 25px;
+    width:25px;
+    cursor: pointer;
+}
+.correct{
+    border:1px solid 198754;
+    background-color: #27e78d;
+}
+.wrong{
+    border:1px solid #f5c2c7;
+    background-color: #f8d7da;
+}
+.selectedText{
+    position: absolute;
+    right: 10px;
+    font: 500 24px popins;
+    color: rgb(69, 69, 229);
+}
