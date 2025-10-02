@@ -10,7 +10,7 @@ git clone https://github.com/shaikhsohel0082/-ASE-Challenge-Quiz-Frontend.git
 ```
 Run
 ```
-cd -ASE-Challenge-Quiz-Frontend
+cd ASE-Challenge-Quiz-Frontend
 ```
 2. Install dependencies:
 ```
