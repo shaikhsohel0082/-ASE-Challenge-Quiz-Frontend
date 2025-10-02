@@ -36,8 +36,8 @@ npm run dev
 
 ## Screenshots 
 1. Instrctions
-![Logo](/frontend/src/assets/instructions.png)
+![Logo](/src/assets/instructions.png)
 2. Questions
-![Logo](/frontend/src/assets/questions.png)
+![Logo](/src/assets/questions.png)
 3. Score
-![Logo](/frontend/src/assets/score.png)
+![Logo](/src/assets/score.png)
