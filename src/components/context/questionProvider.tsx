@@ -25,7 +25,7 @@ export const QuestionProvider: React.FC<{ children: ReactNode }> = ({
         );
       }
       const newQuestion = [...prev, attempt];
-      localStorage.setItem("attemptedQuestion", JSON.stringify(newQuestion));
+      sessionStorage.setItem("attemptedQuestion", JSON.stringify(newQuestion));
       return newQuestion;
     });
   };

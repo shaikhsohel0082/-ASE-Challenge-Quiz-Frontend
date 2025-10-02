@@ -18,7 +18,7 @@ const Timer = ({ totalSec: sec }: Props) => {
   const { timer, setTimer } = useQuestionContext();
 
   const totalSec = useMemo(() => {
-    const timeFromStorage = Number(localStorage.getItem("timer"));
+    const timeFromStorage = Number(sessionStorage.getItem("timer"));
     if (timeFromStorage && timeFromStorage < sec) {
       return timeFromStorage;
     }
@@ -27,12 +27,12 @@ const Timer = ({ totalSec: sec }: Props) => {
 
   useEffect(() => {
     setTimer(totalSec);
-    localStorage.setItem("timer", totalSec.toString());
+    sessionStorage.setItem("timer", totalSec.toString());
 
     const interval = setInterval(() => {
       setTimer((prev) => {
         const newTimer = Math.max(0, prev - 1);
-        localStorage.setItem("timer", newTimer.toString());
+        sessionStorage.setItem("timer", newTimer.toString());
         return newTimer;
       });
     }, 1000);

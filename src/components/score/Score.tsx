@@ -11,17 +11,17 @@ import styles from "./Score.module.scss";
 import { useNavigate } from "react-router";
 const Score = () => {
   const { attemptedQuestions: attempt ,setActiveState} = useQuestionContext();
-  const attemptFromLocalStorage = JSON.parse(
-    localStorage.getItem("attemptedQuestion") + ""
+  const attemptFromsessionStorage = JSON.parse(
+    sessionStorage.getItem("attemptedQuestion") + ""
   );
 
   const attemptedQuestions: IQuestionAttepmt[] = useMemo(() => {
-    if (attemptFromLocalStorage) {
-      return attemptFromLocalStorage;
+    if (attemptFromsessionStorage) {
+      return attemptFromsessionStorage;
     } else {
       return attempt;
     }
-  }, [attempt, attemptFromLocalStorage]);
+  }, [attempt, attemptFromsessionStorage]);
 
   const payload = useMemo(() => {
     return attemptedQuestions?.map((que) => ({
@@ -48,10 +48,8 @@ const Score = () => {
                 <button
                   className="btn btn-outline-danger px-4 py-2"
                   onClick={() => {
-                    localStorage.clear();
-                    localStorage.setItem("stateFromStorage", "instructions");
-                    setActiveState("instructions");
-                    navigate("/");
+                    sessionStorage.clear();
+                    window.location.href = "https://www.google.com/"; 
                   }}
                 >
                   Exit

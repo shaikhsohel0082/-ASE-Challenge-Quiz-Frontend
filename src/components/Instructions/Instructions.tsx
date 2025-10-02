@@ -14,7 +14,7 @@ const Instructions = () => {
   const handleStart = () => {
     if (isChecked) {
       setActiveState("questions");
-      localStorage.setItem("progress", "questions");
+      sessionStorage.setItem("progress", "questions");
       navigate("/questions");
 
       //enable fullscreen mode when quiz is started

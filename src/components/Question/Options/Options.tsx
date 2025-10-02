@@ -10,7 +10,7 @@ interface Props {
 const Options = ({ handleClick, context, question }: Props) => {
   const { attemptedQuestions: attempt } = useQuestionContext();
   const restoredQuestions = JSON.parse(
-    localStorage.getItem("attemptedQuestion") + ""
+    sessionStorage.getItem("attemptedQuestion") + ""
   );
   const attemptedQuestions: {
     questionId: string;

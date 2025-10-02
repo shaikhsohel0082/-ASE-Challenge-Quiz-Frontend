@@ -20,7 +20,8 @@ export interface IQuestion{
 
 }
 export const getAllQuestion= async ()=>{
-    const url=`${import.meta.env.VITE_BACKEND_URL}/question/getAllQuestions`
+    const backendURL=import.meta.env.VITE_BACKEND_URL ||  "http://localhost:5000"
+    const url=`${backendURL}/question/getAllQuestions`
     try{
         const res=await axios.get(url);
         return res.data as IQuestion[];

@@ -8,7 +8,7 @@ import Score from "./components/score/Score";
 
 function App() {
   const { activeState: active } = useQuestionContext();
-  const stateFromStorage = localStorage.getItem("progress");
+  const stateFromStorage = sessionStorage.getItem("progress");
   const activeState = useMemo(() => {
     return stateFromStorage || active;
   }, [active, stateFromStorage]);

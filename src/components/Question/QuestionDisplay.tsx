@@ -7,20 +7,26 @@ import Timer from "../Timer/Timer";
 import Question from "./Question";
 const QuestionDisplay = () => {
   const { data, isLoading, isError } = useGetAllQuestions();
-  const {activeState:active}=useQuestionContext();
+  const { activeState: active } = useQuestionContext();
 
-  const activeState=useMemo(()=>{
-    const stateFromStorage=localStorage.getItem("progress");
-    return stateFromStorage || active
-  },[active])
+  const activeState = useMemo(() => {
+    const stateFromStorage = sessionStorage.getItem("progress");
+    return stateFromStorage || active;
+  }, [active]);
 
   return (
     <>
-      {isLoading ? <Loader />: isError ? <DisplayError /> : (
-     <div>
-      {activeState==="questions" && <Timer totalSec={(1)*60} />}
-        <Question data={data}/>
-     </div>
+      {isLoading ? (
+        <Loader />
+      ) : isError ? (
+        <DisplayError />
+      ) : (
+        <div>
+          {activeState === "questions" && (
+            <Timer totalSec={(data?.length || 1) * 60} />
+          )}
+          <Question data={data} />
+        </div>
       )}
     </>
   );

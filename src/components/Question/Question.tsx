@@ -25,7 +25,7 @@ const Question = ({ data, context = "question" }: Props) => {
   } = useQuestionContext();
   const navigate = useNavigate();
   const activeQuestionIndex = useMemo(() => {
-    const idxFromStorage = Number(localStorage.getItem("activeQuestionIndex"));
+    const idxFromStorage = Number(sessionStorage.getItem("activeQuestionIndex"));
     if (idxFromStorage > 0) {
       return idxFromStorage;
     }
@@ -33,7 +33,7 @@ const Question = ({ data, context = "question" }: Props) => {
   }, [queIndex]);
 
   const timer = useMemo(() => {
-    return Math.max(Number(localStorage.getItem("timer")), stateTime);
+    return Math.max(Number(sessionStorage.getItem("timer")), stateTime);
   }, [stateTime]);
 
   const handleClick = (opt: IOption, questionId: string) => {
@@ -55,10 +55,10 @@ const Question = ({ data, context = "question" }: Props) => {
 
     if (canSubmit) {
       setActiveState("score");
-      localStorage.setItem("progress", "score");
+      sessionStorage.setItem("progress", "score");
       navigate("/score");
       setActiveQuestionIndex(0);
-      localStorage.setItem("activeQuestionIndex", "0");
+      sessionStorage.setItem("activeQuestionIndex", "0");
     }
   };
 
@@ -125,7 +125,7 @@ const Question = ({ data, context = "question" }: Props) => {
           onClick={() => {
             setActiveQuestionIndex(() => {
               const index = Math.max(activeQuestionIndex - 1, 0);
-              localStorage.setItem("activeQuestionIndex", index.toString());
+              sessionStorage.setItem("activeQuestionIndex", index.toString());
               return index;
             });
           }}
@@ -142,7 +142,7 @@ const Question = ({ data, context = "question" }: Props) => {
                   activeQuestionIndex + 1,
                   data.length - 1
                 );
-                localStorage.setItem("activeQuestionIndex", index.toString());
+                sessionStorage.setItem("activeQuestionIndex", index.toString());
                 return index;
               });
             } else {
