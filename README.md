@@ -5,7 +5,7 @@ This is the frontend of the Online Quiz Application, built with React, Vite, and
 ## ⚙️ Installation & Setup
 1. Clone the repository:
 ```
-git clone https://github.com/shaikhsohel0082/-ASE-Challenge-Quiz-Frontend.git
+git clone https://github.com/shaikhsohel0082/ASE-Challenge-Quiz-Frontend.git
 
 ```
 Run
