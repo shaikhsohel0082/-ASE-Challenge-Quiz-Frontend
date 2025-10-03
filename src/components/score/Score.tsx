@@ -8,9 +8,8 @@ import { useGetScore } from "../hooks/useGetScore";
 import Loader from "../Loader/Loader";
 import Question from "../Question/Question";
 import styles from "./Score.module.scss";
-import { useNavigate } from "react-router";
 const Score = () => {
-  const { attemptedQuestions: attempt ,setActiveState} = useQuestionContext();
+  const { attemptedQuestions: attempt } = useQuestionContext();
   const attemptFromsessionStorage = JSON.parse(
     sessionStorage.getItem("attemptedQuestion") + ""
   );
@@ -30,7 +29,7 @@ const Score = () => {
     }));
   }, [attemptedQuestions]);
   const { data, isError, isLoading } = useGetScore({ payload });
-  const navigate = useNavigate();
+ 
   return (
     <>
       {isLoading ? (
